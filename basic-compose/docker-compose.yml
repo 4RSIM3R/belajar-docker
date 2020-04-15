@@ -1,0 +1,12 @@
+version: '3.3'
+
+services: 
+    build: 
+        context: ./php
+    application:
+        container_name: application
+        image: php:7.2-fpm-alpine
+        volumes: 
+            - ./php:/var/www/html
+        ports: 
+            - "8000:80"
